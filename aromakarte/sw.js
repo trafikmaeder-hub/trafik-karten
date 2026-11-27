@@ -1,5 +1,5 @@
 // Offline-Speicher: Seite zuerst aus dem Netz (für Updates), sonst aus dem Cache
-const C='aromakarte-2026-11-27f';
+const C='aromakarte-2026-11-27g';
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(["./", "index.html", "manifest.webmanifest", "icon-180.png", "icon-192.png", "icon-512.png"])))});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k.startsWith('aromakarte-')&&k!==C).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{
