@@ -75,7 +75,7 @@ main{min-width:0;padding:0 22px 60px}
 .br{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--bc);padding:2px 7px;border-radius:5px}
 .ln{font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:1px 6px;border-radius:5px}
 .pr{margin-left:auto;font-size:.85rem;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
-.tx h3 .cd{font-weight:800}.tx h3{font-family:var(--display);font-weight:800;font-size:1.1rem;line-height:1.1;margin:2px 0 0;text-wrap:balance}
+.tx h3 .cd{display:inline-grid;place-items:center;min-width:1.75em;height:1.75em;padding:0 .4em;margin-right:4px;border-radius:999px;color:#fff;font-size:.78em;font-weight:800;line-height:1;vertical-align:.12em;letter-spacing:.02em}.tx h3{font-family:var(--display);font-weight:800;font-size:1.1rem;line-height:1.1;margin:2px 0 0;text-wrap:balance}
 .tx p{margin:0;font-size:.88rem;color:var(--muted)}
 .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:3px}
 .tag{display:inline-flex;align-items:center;gap:4px;font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--cool-bg);color:var(--cool)}
@@ -149,7 +149,7 @@ function card(r){
   const tags=(r.mg||[]).filter(()=>st.mode==='ecig'&&r.b==='Tappo Air').map(x=>`<span class="tag mg">${x}</span>`).join('')+(r.c?`<span class="tag">${SNOW}kühl</span>`:'');
   return `<article class="card"><div class="sw" style="--c1:${c1};--c2:${c2}">${r.code?`<span class="code" style="--bc:${m.colors[r.b]}">${esc(r.code)}</span>`:''}<div class="frw n${r.f.length}">${r.f.map((f,i)=>`<img class="f f${i+1}" src="${D.imgs[f]}" alt="">`).join('')}</div></div>
   <div class="tx"><div class="top"><span class="br" style="--bc:${m.colors[r.b]}">${esc(r.b)}</span>${r.l?`<span class="ln">${esc(r.l)}</span>`:''}${r.p?`<span class="pr">${eur(r.p)}</span>`:''}</div>
-  <h3>${r.code?`<span class="cd" style="color:${m.colors[r.b]}">${esc(r.code)}</span> `:''}${esc(r.n)}</h3><p>${esc(r.d)}</p>${tags?`<div class="tags">${tags}</div>`:''}</div></article>`}
+  <h3>${r.code?`<span class="cd" style="background:${m.colors[r.b]}">${esc(r.code)}</span> `:''}${esc(r.n)}</h3><p>${esc(r.d)}</p>${tags?`<div class="tags">${tags}</div>`:''}</div></article>`}
 function catView(){
   const m=M();
   root.innerHTML=`<div class="app"><aside aria-label="Filter">
