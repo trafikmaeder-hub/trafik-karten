@@ -137,10 +137,10 @@ function chipsHTML(){
   const cb=b=>rows.filter(r=>match(r,'b')&&r.b===b).length;
   const cc=rows.filter(r=>match(r,'c')&&r.c).length;
   const cz=rows.filter(r=>match(r,'z')&&(r.mg||[]).includes('0 mg')).length;
-  return `<div class="grp"><h2>Geschmack <button type="button" data-clear="k">Alle</button></h2><div class="chips">${cats.map(c=>`<button type="button" class="chip" data-k="${esc(c)}" aria-pressed="${st.k.has(c)}">${esc(c)} <small>${ck(c)}</small></button>`).join('')}</div></div>
+  return `<div class="grp"><h2>${m.group} <button type="button" data-clear="b">Alle</button></h2><div class="chips">${groups.map(b=>`<button type="button" class="chip" data-b="${esc(b)}" aria-pressed="${st.b.has(b)}" style="--bc:${m.colors[b]}"><span class="dot"></span>${esc(b)} <small>${cb(b)}</small></button>`).join('')}</div></div>
+  <div class="grp"><h2>Geschmack <button type="button" data-clear="k">Alle</button></h2><div class="chips">${cats.map(c=>`<button type="button" class="chip" data-k="${esc(c)}" aria-pressed="${st.k.has(c)}">${esc(c)} <small>${ck(c)}</small></button>`).join('')}</div></div>
   <div class="grp"><h2>Kühleffekt</h2><div class="chips"><button type="button" class="chip cool" data-t="cool" aria-pressed="${st.cool}">${SNOW} Nur kühle Sorten <small>${cc}</small></button></div></div>
-  ${st.mode!=='shisha'?`<div class="grp"><h2>Nikotin</h2><div class="chips"><button type="button" class="chip" data-t="zero" aria-pressed="${st.zero}">Auch nikotinfrei (0 mg) <small>${cz}</small></button></div></div>`:''}
-  <div class="grp"><h2>${m.group} <button type="button" data-clear="b">Alle</button></h2><div class="chips">${groups.map(b=>`<button type="button" class="chip" data-b="${esc(b)}" aria-pressed="${st.b.has(b)}" style="--bc:${m.colors[b]}"><span class="dot"></span>${esc(b)} <small>${cb(b)}</small></button>`).join('')}</div></div>`;
+  ${st.mode!=='shisha'?`<div class="grp"><h2>Nikotin</h2><div class="chips"><button type="button" class="chip" data-t="zero" aria-pressed="${st.zero}">Auch nikotinfrei (0 mg) <small>${cz}</small></button></div></div>`:''}`;
 }
 function card(r){
   const m=M();
