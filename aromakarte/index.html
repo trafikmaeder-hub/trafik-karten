@@ -32,7 +32,7 @@ button{font:inherit;color:inherit}
 .choice .meta{color:var(--muted);margin-top:6px;font-size:1rem}
 .choice .go{position:absolute;right:22px;bottom:24px;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:1.5rem}
 .choice.sh .go{background:var(--sh)}.choice.ec .go{background:var(--ec)}.choice.lq .go{background:var(--lq)}
-.start .age{font-size:clamp(1.25rem,2.6vw,1.75rem);font-weight:800;line-height:1.3;text-align:center;color:var(--ink);margin:4px 0 0;text-wrap:balance}
+.start .age{font-size:clamp(1.5rem,3.4vw,2.4rem);font-weight:800;line-height:1.3;text-align:center;color:var(--ink);margin:4px 0 0;text-wrap:balance}
 /* catalog */
 .app{display:grid;grid-template-columns:290px minmax(0,1fr);min-height:100vh}
 aside{position:sticky;top:env(safe-area-inset-top,0px);height:100vh;overflow-y:auto;background:var(--surface);border-right:1px solid var(--line);padding:18px 18px 40px;display:flex;flex-direction:column;gap:20px}
@@ -128,7 +128,7 @@ function startView(){
    <button type="button" class="choice sh" data-mode="shisha"><div class="art">${['grape','mint','lemon','peach'].map(f=>`<img class="fr" src="${D.imgs[f]}" alt="">`).join('')}</div><h2>Shisha-Tabak</h2><div class="meta">${D.shisha.length} Sorten · ${new Set(D.shisha.map(r=>r.b)).size} Marken</div><span class="go" aria-hidden="true">→</span></button>
    <button type="button" class="choice ec" data-mode="ecig"><div class="art ecart"><img class="pd" src="${D.prod.elfa_dev}" alt="" style="height:80%"><img class="pd" src="${D.prod.ta_dev}" alt="" style="height:56%"><img class="pd" src="${D.prod.sik_kit}" alt="" style="height:60%"><img class="pd" src="${D.prod.owla_box}" alt="" style="height:56%"><img class="pd" src="${D.prod.bj_pod}" alt="" style="height:58%"><img class="pd" src="${D.prod.nc_kit}" alt="" style="height:66%"></div><h2>E-Zigaretten</h2><div class="meta">${D.ecig.length} Aromen · Elfbar, Lost Mary, Bar Juice, Sikary, OWLA, IVG</div><span class="go" aria-hidden="true">→</span></button>
    <button type="button" class="choice lq" data-mode="liq"><div class="art lqart"><img class="fr" src="${D.imgs.strawberry}" alt=""><img class="fr" src="${D.imgs.blueberry}" alt="" style="margin-left:-18px"><img class="pd" src="${D.prod.bj_bottle}" alt=""><img class="fr" src="${D.imgs.mango}" alt="" style="margin-left:-6px"><img class="fr" src="${D.imgs.mint}" alt="" style="margin-left:-18px"></div><h2>Liquids &amp; Aromen</h2><div class="meta">${D.liq.length} Aromen · Bar Juice, Yeti, Evergreen</div><span class="go" aria-hidden="true">→</span></button>
-  </div><p class="age">Abgabe von Tabakwaren und E-Zigaretten nur an Personen ab 18 Jahren.</p></section>`;
+  </div><p class="age">Abgabe von Tabakwaren und E&#8209;Zigaretten nur an Personen ab 18 Jahren.</p></section>`;
 }
 function chipsHTML(){
   const m=M(),rows=m.rows,groups=Object.keys(m.colors);
